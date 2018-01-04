@@ -18,9 +18,8 @@ namespace Task6
                 
             }
             //listOfEmployees.Sort((employee, employee1) => employee.CompareTo(employee1));    //with lambda
-            listOfEmployees.Sort();  
             //listOfEmployees.Sort(Employee.CompareByPosition);    //compare by position
-            // listOfEmployees.Sort(Employee.CompareBySalary); //compare by solary value
+            listOfEmployees.Sort(Employee.CompareBySalary); //compare by solary value
             //listOfEmployees.Sort(Employee.CompareByName);    //compare by name
 
          
