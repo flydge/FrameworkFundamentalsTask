@@ -2,7 +2,7 @@
 
 namespace Task6
 {
-    public class Employee
+    public class Employee: IComparable<Employee>
     {
         private string name;
         private string position;
@@ -36,6 +36,8 @@ namespace Task6
             get => salaryValue;
             set => salaryValue = value;
         }
+        
+        
 
         public static int CompareBySalary(Employee em1, Employee em2)
         {
@@ -58,6 +60,18 @@ namespace Task6
         public override string ToString()
         {
             return String.Format("name:{0,-15} position:{1,-15} salary:{2,-10}",name,position,salaryValue);
+        }
+
+
+        public int CompareTo(Employee other)
+        {
+            if (ReferenceEquals(this, other)) return 0;
+            if (ReferenceEquals(null, other)) return 1;
+            var nameComparison = string.Compare(name, other.name, StringComparison.Ordinal);
+            if (nameComparison != 0) return nameComparison;
+            var positionComparison = string.Compare(position, other.position, StringComparison.Ordinal);
+            if (positionComparison != 0) return positionComparison;
+            return salaryValue.CompareTo(other.salaryValue);
         }
     }
 }

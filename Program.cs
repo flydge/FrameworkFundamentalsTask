@@ -17,8 +17,9 @@ namespace Task6
                 listOfEmployees.Add(new Employee("Name"+(i^2+i),"SuperWorker",200+2*i));
                 
             }
-            
-            listOfEmployees.Sort(Employee.CompareByPosition);    //compare by position
+            //listOfEmployees.Sort((employee, employee1) => employee.CompareTo(employee1));    //with lambda
+            listOfEmployees.Sort();  
+            //listOfEmployees.Sort(Employee.CompareByPosition);    //compare by position
             // listOfEmployees.Sort(Employee.CompareBySalary); //compare by solary value
             //listOfEmployees.Sort(Employee.CompareByName);    //compare by name
 
